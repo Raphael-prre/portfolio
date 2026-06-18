@@ -498,7 +498,7 @@ a {
 /* --- SKILLS GRID --- */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
@@ -517,12 +517,14 @@ a {
 }
 
 .skills-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   text-transform: uppercase;
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
+  text-align: center;
 }
 
 .skills-card h3 i {
@@ -531,18 +533,27 @@ a {
 
 .skills-list {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   gap: 0.8rem;
+  width: 100%;
 }
 
 .skill-tag {
   background-color: var(--bg-tertiary);
   border: 1px solid var(--border-color);
-  padding: 8px 18px;
+  padding: 12px 18px;
   font-size: 0.85rem;
   font-weight: 550;
-  border-radius: 50px;
+  border-radius: var(--radius-sm);
   transition: all var(--transition);
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  line-height: 1.4;
 }
 
 .skill-tag:hover {
@@ -614,6 +625,15 @@ a {
   transition: all var(--transition);
 }
 
+.software-logo-img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  transition: all var(--transition);
+}
+
 .software-logo-card span {
   font-size: 0.85rem;
   font-weight: 700;
@@ -632,22 +652,13 @@ a {
   transform: scale(1.08);
 }
 
-/* Logos en image (PNG/SVG) : gris -> couleur au survol/clic */
-.software-logo-img {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.65;
-  transition: all var(--transition);
-}
-
-.software-logo-card--img:hover .software-logo-img,
-.software-logo-card--img.is-active .software-logo-img {
+.software-logo-card:hover .software-logo-img {
   filter: grayscale(0%);
   opacity: 1;
   transform: scale(1.08);
 }
+
+
 
 /* Brand specific logo hover colors */
 .software-logo-card:hover .devicon-linux-plain { color: #f05032; }
@@ -774,7 +785,8 @@ a {
 .project-preview img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background-color: #ffffff;
   transition: transform var(--transition);
 }
 
@@ -1148,7 +1160,7 @@ a {
 }
 
 .modal-media-box {
-  background-color: var(--bg-tertiary);
+  background-color: #ffffff;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   aspect-ratio: 16 / 10;
@@ -1168,7 +1180,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background-color: #0c0e17;
+  background-color: transparent;
 }
 
 .modal-thumbnails {
